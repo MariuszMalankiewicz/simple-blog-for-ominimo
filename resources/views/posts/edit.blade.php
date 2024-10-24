@@ -12,7 +12,13 @@
         @csrf
         @method('PUT')
         <input type="text" name="title" value="{{$post->title}}" required class="border rounded p-2 w-3/4">
+        @error('title')
+        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+        @enderror 
         <textarea name="content" required class="border rounded p-2 mt-4 w-3/4">{{$post->content}}</textarea>
+        @error('content')
+        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+        @enderror 
         <div class="flex space-x-4 mt-2">
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</button>
             <a href="{{route('posts.index')}}" class="bg-gray-200 text-gray-700 px-4 py-2 rounded">Back</a>

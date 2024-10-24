@@ -39,7 +39,7 @@
                 @csrf
 
                 <div class="mb-4">
-                    <textarea name="comment" rows="3" class="border rounded w-[500px] py-2 px-3 mt-1 @error('comment') border-red-500 @enderror"
+                    <textarea name="comment" rows="3" required class="border rounded w-[500px] py-2 px-3 mt-1 @error('comment') border-red-500 @enderror"
                         placeholder="Write your comment..."></textarea>
 
                     <!-- Validation errors -->
