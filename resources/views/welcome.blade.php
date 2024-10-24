@@ -53,12 +53,7 @@
 
         <main class="text-center text-white mt-24">
             <h1 class="text-4xl mb-12">Welcome to simple blog</h1>
-            @foreach ($posts as $post)
-                <ul>
-                    <li>{{ $post->title }}</li>
-                    <li>{{ $post->content }}</li>
-                </ul>
-        @endforeach
+            <a href="{{route('posts.index')}}" class="text-xl underline text-blue-500">See posts</a>
         </main>
     </body>
 </html>
