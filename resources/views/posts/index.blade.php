@@ -16,12 +16,16 @@
                 <div class="flex justify-between mb-1">  
                     <div class="flex space-x-4">
                     <a href="{{ route('posts.show', $post->id) }}" class="text-green-600">Show</a>
+                    @can('update', $post)
                     <a href="{{ route('posts.edit', $post->id) }}" class="text-blue-500">Edit</a>
+                    @endcan
+                    @can('delete', $post)
                     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-500">Delete</button>
                     </form>
+                    @endcan
                     </div>
                     <div>
                         <span class="">by {{ $post->user->name }}</span>

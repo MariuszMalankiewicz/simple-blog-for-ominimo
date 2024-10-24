@@ -19,12 +19,14 @@
                 <p><strong>{{ $comment->user->name }}:</strong> {{ $comment->comment }}</p>
 
                 <!-- delete comments -->
+                @can('delete', $comment)
                 <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" class="mt-2">
                     @csrf
                     @method('DELETE')
 
                     <button type="submit" class="text-red-500 hover:underline">Delete</button>
                 </form>
+                @endcan
 
             @empty
                 <p>No comments yet. Be the first to comment!</p>
