@@ -13,7 +13,15 @@
             <li class="flex flex-col bg-slate-200 m-2 max-w-[500px] p-4 rounded">
                 <a href="#" class="text-blue-600">{{ $post->title }}</a>
                 <p class="">{{ $post->content }}</p>
-                <span class="text-end">by {{ $post->user->name }}</span>
+                <div class="flex justify-between mt-4 mb-1">  
+                    <div>
+                    <a href="{{ route('posts.edit', $post->id) }}" class="text-blue-500">Edit</a>
+                    </div>
+                    <div>
+                        <span class="">by {{ $post->user->name }}</span>
+                    </div>
+                </div>
+                
             </li>
         @endforeach
     </ul>
