@@ -9,10 +9,11 @@
     <div class="container mx-auto">
         <!-- show post -->
         <h1 class="text-2xl font-bold my-4">Posts {{$post->title}}</h1>
-        <p class="my-4 blocks">{{ $post->content }}</p>
+        <p>{{ $post->content }}</p>
        
         <!--display comments -->
         <div class="mt-6">
+        <h2 class="text-xl font-bold">Comments</h2>
         @forelse ($post->comments as $comment)
             <div class="border-b py-2">
                 <p><strong>{{ $comment->user->name }}:</strong> {{ $comment->comment }}</p>
@@ -22,7 +23,6 @@
         </div>
 
         <!-- add comments -->
-        <h2 class="text-xl font-bold mb-4">Comments</h2>
         @auth
         <div class="mt-6">
             <h2 class="text-xl font-bold mb-4">Add a Comment</h2>
