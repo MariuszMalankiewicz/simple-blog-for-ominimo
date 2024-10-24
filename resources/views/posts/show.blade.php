@@ -17,6 +17,15 @@
         @forelse ($post->comments as $comment)
             <div class="border-b py-2">
                 <p><strong>{{ $comment->user->name }}:</strong> {{ $comment->comment }}</p>
+
+                <!-- delete comments -->
+                <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" class="mt-2">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                </form>
+
             @empty
                 <p>No comments yet. Be the first to comment!</p>
             @endforelse
@@ -33,7 +42,7 @@
                     <textarea name="comment" rows="3" class="border rounded w-[500px] py-2 px-3 mt-1 @error('comment') border-red-500 @enderror"
                         placeholder="Write your comment..."></textarea>
 
-                    <!-- Walidacja błędów -->
+                    <!-- Validation errors -->
                     @error('comment')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror 

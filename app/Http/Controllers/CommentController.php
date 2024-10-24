@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -17,5 +18,11 @@ class CommentController extends Controller
     ]);
 
     return redirect()->route('posts.show', $post);
+}
+
+public function destroy(Comment $comment)
+{
+    $comment->delete();
+    return redirect()->back();
 }
 }
