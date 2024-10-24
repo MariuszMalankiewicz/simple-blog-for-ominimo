@@ -50,4 +50,10 @@ public function update(Request $request, Post $post)
     return redirect()->route('posts.index', $post);
 }
 
+public function destroy(Post $post)
+{
+    $post->delete();
+    return redirect()->route('posts.index');
+}
+
 }

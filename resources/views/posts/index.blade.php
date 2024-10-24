@@ -15,8 +15,13 @@
                 <p class="my-3">{{ $post->content }}</p>
                 <div class="flex justify-between mb-1">  
                     <div class="flex space-x-4">
-                    <a href="{{ route('posts.show', $post->id) }}" class="text-blue-500">Show</a>
+                    <a href="{{ route('posts.show', $post->id) }}" class="text-green-600">Show</a>
                     <a href="{{ route('posts.edit', $post->id) }}" class="text-blue-500">Edit</a>
+                    <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500">Delete</button>
+                    </form>
                     </div>
                     <div>
                         <span class="">by {{ $post->user->name }}</span>
