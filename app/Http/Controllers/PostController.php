@@ -27,6 +27,12 @@ public function store(Request $request)
 
     return redirect()->route('posts.index');
 }
+
+public function show(Post $post)
+{
+    $comments = $post->comments()->with('user')->get();
+    return view('posts.show', compact('post', 'comments'));
+}
 public function edit(Post $post)
 {
     return view('posts.edit', compact('post'));
