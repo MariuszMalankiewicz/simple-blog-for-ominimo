@@ -32,4 +32,16 @@ public function edit(Post $post)
     return view('posts.edit', compact('post'));
 }
 
+public function update(Request $request, Post $post)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+    ]);
+
+    $post->update($request->only('title', 'content'));
+
+    return redirect()->route('posts.index', $post);
+}
+
 }
