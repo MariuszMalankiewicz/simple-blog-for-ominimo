@@ -8,7 +8,7 @@
 
 <div class="container mx-auto">
     <h1 class="text-2xl font-bold my-4">Create Post</h1>
-    <form>
+    <form action="{{ route('posts.store') }}" method="POST">
         @csrf
         <input type="text" name="title" placeholder="Title" required class="border rounded p-2 w-3/4">
         <textarea name="content" placeholder="Content" required class="border rounded p-2 mt-4 w-3/4"></textarea>

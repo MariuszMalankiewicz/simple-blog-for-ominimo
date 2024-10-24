@@ -16,4 +16,16 @@ class PostController extends Controller
 {
     return view('posts.create');
 }
+public function store(Request $request)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+    ]);
+
+    $request->user()->posts()->create($request->only('title', 'content'));
+
+    return redirect()->route('posts.index');
+}
+
 }
