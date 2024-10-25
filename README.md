@@ -26,11 +26,11 @@ npm install
 Copy the example .env file and adjust it to your local settings:
 cp .env.example .env
 Next, open the .env file and update information such as:
-DB_CONNECTION = mysql
-DB_HOST = your host (default: 127.0.0.1)
-DB_PORT = your port (default: 3306)
-DB_DATABASE = your name of database in your mysql (default: laravel)
-DB_USERNAME = your username (default: root)
+DB_CONNECTION = mysql<br>
+DB_HOST = your host (default: 127.0.0.1)<br>
+DB_PORT = your port (default: 3306)<br>
+DB_DATABASE = your name of database in your mysql (default: laravel)<br>
+DB_USERNAME = your username (default: root)<br>
 DB_PASSWORD = your password (this field is empty)
 
 ## 7. Generate the application key:
