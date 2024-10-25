@@ -52,7 +52,7 @@ public function update(Request $request, Post $post)
 
     $post->update($request->only('title', 'content'));
 
-    return redirect()->route('posts.index', $post);
+    return redirect()->route('posts.show', $post);
 }
 
 public function destroy(Post $post)

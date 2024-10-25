@@ -4,15 +4,12 @@
             {{ __('Posts') }}
         </h2>
     </x-slot>
-
-
     <div class="container mx-auto">
     <h1 class="text-2xl font-bold my-4">Posts</h1>
     <ul class="flex flex-wrap gap-4 justify-center">
         @foreach ($posts as $post)
             <li class="bg-slate-200 w-[300px] sm:w-[350px] my-2 p-4 rounded">
                 <h3 class="font-bold">{{ $post->title }}</h3>
-                <p class="my-3">{{ $post->content }}</p>
                 <div class="flex justify-between mb-1">  
                     <div class="flex space-x-4">
                     <a href="{{ route('posts.show', $post->id) }}" class="text-green-600">Show</a>
