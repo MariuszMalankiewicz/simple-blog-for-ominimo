@@ -8,9 +8,9 @@
 
     <div class="container mx-auto">
     <h1 class="text-2xl font-bold my-4">Posts</h1>
-    <ul class="mt-4">
+    <ul class="flex flex-wrap gap-4 justify-center">
         @foreach ($posts as $post)
-            <li class="flex flex-col bg-slate-200 my-2 w-[500px] p-4 rounded">
+            <li class="bg-slate-200 w-[300px] sm:w-[350px] my-2 p-4 rounded">
                 <h3 class="font-bold">{{ $post->title }}</h3>
                 <p class="my-3">{{ $post->content }}</p>
                 <div class="flex justify-between mb-1">  
@@ -32,8 +32,10 @@
                     </div>
                 </div>
             </li>
-            <div class="mt-6">
         @endforeach
     </ul>
+    <div class="w-1/2 mx-auto py-8">
+        {{ $posts->links() }}
+    </div>
 </div>
 </x-app-layout>
