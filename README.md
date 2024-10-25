@@ -25,7 +25,7 @@ npm install
 ## 6. Configure the .env file:
 Copy the example .env file and adjust it to your local settings:
 cp .env.example .env
-Next, open the .env file and update information such as:
+Next, open the .env file and update information such as:<br>
 DB_CONNECTION = mysql<br>
 DB_HOST = your host (default: 127.0.0.1)<br>
 DB_PORT = your port (default: 3306)<br>
